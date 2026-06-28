@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Lus_Apartments_Apartments — Meanwood Ibex, Lusaka</title>
+    <meta name="description" content="Elegant 2-bedroom fully furnished apartment in Meanwood Ibex, Lusaka. Short & long-term stays from K1,800 per night.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- FLOATING NAV -->
+<header class="header" id="header">
+    <nav class="pill-nav" id="pillNav">
+        <a href="#top" class="pn-logo">3Lus_Apartments</a>
+        <ul class="pn-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+        </ul>
+        <a href="tel:+260972437080" class="pn-cta">Call / WhatsApp</a>
+        <button class="pn-burger" id="burger">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+    <button class="mob-x" id="mobX">&times;</button>
+    <a href="#about"     onclick="closeMob()">About</a>
+    <a href="#gallery"   onclick="closeMob()">Gallery</a>
+    <a href="#pricing"   onclick="closeMob()">Pricing</a>
+    <a href="#amenities" onclick="closeMob()">Amenities</a>
+    <a href="tel:+260972437080" onclick="closeMob()" class="mob-cta">Call / WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+    <div class="hero-slides" id="heroSlides">
+        <div class="hs active">
+            <video autoplay muted loop playsinline><source src="images/sitting-room.mp4" type="video/mp4"></video>
+        </div>
+        <div class="hs">
+            <video autoplay muted loop playsinline><source src="images/bedroom-1.mp4" type="video/mp4"></video>
+        </div>
+        <div class="hs">
+            <video autoplay muted loop playsinline><source src="images/yard.mp4" type="video/mp4"></video>
+        </div>
+    </div>
+    <div class="hero-veil"></div>
+
+    <div class="hero-center">
+        <span class="hero-tag">Meanwood Ibex · Lusaka</span>
+        <h1 class="hero-title">
+            <span class="ht-line">A Place</span>
+            <span class="ht-line italic">That Feels</span>
+            <span class="ht-line">Like Home</span>
+        </h1>
+        <a href="#about" class="hero-explore">
+            Discover the Apartment
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+    </div>
+
+    <div class="hero-bottom">
+        <div class="hero-stat">
+            <strong>K1,800</strong><span>Per Night</span>
+        </div>
+        <div class="hero-sdots">
+            <button class="sdot active" onclick="goSlide(0)"></button>
+            <button class="sdot"        onclick="goSlide(1)"></button>
+            <button class="sdot"        onclick="goSlide(2)"></button>
+        </div>
+        <div class="hero-stat right">
+            <strong>2</strong><span>Bedrooms</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="about-text reveal">
+        <span class="eyebrow">The Apartment</span>
+        <h2 class="section-h">Comfort &amp;<br><em>Elegance</em><br>in Lusaka</h2>
+        <p>Situated in Meanwood Ibex, Lusaka, 3Lus_Apartments_Apartments is a beautifully furnished two-bedroom apartment designed for guests who want more than just a room. Whether you're visiting for a weekend or settling in for months, every detail is taken care of.</p>
+        <div class="about-nums">
+            <div class="an"><strong>2</strong><span>Bedrooms</span></div>
+            <div class="an"><strong>2</strong><span>Bathrooms</span></div>
+            <div class="an"><strong>100%</strong><span>Furnished</span></div>
+        </div>
+        <a href="tel:+260972437080" class="btn-solid">Call / WhatsApp to Book</a>
+    </div>
+    <div class="about-img reveal reveal-d2">
+        <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"><source src="images/bedroom-1.mp4" type="video/mp4"></video>
+        <div class="about-img-float">
+            <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;"><source src="images/kitchen.mp4" type="video/mp4"></video>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+    <div class="gallery-top reveal">
+        <span class="eyebrow">The Space</span>
+        <h2 class="section-h">See Every Room</h2>
+    </div>
+    <div class="gallery-scroll" id="galleryScroll">
+        <div class="gcard tall" data-i="0">
+            <video autoplay muted loop playsinline><source src="images/sitting-room.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Sitting Room</div>
+        </div>
+        <div class="gcard" data-i="1">
+            <video autoplay muted loop playsinline><source src="images/bedroom-1.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Bedroom 1</div>
+        </div>
+        <div class="gcard" data-i="2">
+            <video autoplay muted loop playsinline><source src="images/kitchen.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Kitchen</div>
+        </div>
+        <div class="gcard tall" data-i="3">
+            <video autoplay muted loop playsinline><source src="images/bedroom-2.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Bedroom 2</div>
+        </div>
+        <div class="gcard" data-i="4">
+            <video autoplay muted loop playsinline><source src="images/bathroom-1.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Bathroom 1</div>
+        </div>
+        <div class="gcard" data-i="5">
+            <video autoplay muted loop playsinline><source src="images/bathroom-2.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Bathroom 2</div>
+        </div>
+        <div class="gcard" data-i="6">
+            <video autoplay muted loop playsinline><source src="images/yard.mp4" type="video/mp4"></video>
+            <span class="gcard-play">▶</span>
+            <div class="gcard-label">Yard</div>
+        </div>
+    </div>
+    <div class="gallery-hint">Drag to explore &rarr;</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+    <div class="lb-bg" onclick="closeLb()"></div>
+    <div class="lb-media" id="lbMedia"></div>
+    <button class="lb-x" onclick="closeLb()">&times;</button>
+    <button class="lb-p" onclick="lbMove(-1)">&#8249;</button>
+    <button class="lb-n" onclick="lbMove(1)">&#8250;</button>
+    <span class="lb-c" id="lbC">1 / 7</span>
+</div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="pricing-inner">
+        <div class="pricing-head reveal">
+            <span class="eyebrow light">Rates</span>
+            <h2 class="section-h light">Pricing</h2>
+        </div>
+        <div class="pricing-cards">
+            <div class="pcard reveal">
+                <div class="pcard-top">
+                    <p class="pcard-type">Short-Term</p>
+                    <p class="pcard-rate">K1,800<em>/night</em></p>
+                </div>
+                <ul>
+                    <li>From 1 night</li>
+                    <li>All utilities included</li>
+                    <li>High-speed WiFi</li>
+                    <li>Fully furnished</li>
+                    <li>Flexible check-in</li>
+                </ul>
+                <a href="tel:+260972437080" class="btn-solid">Call / WhatsApp to Book</a>
+            </div>
+            <div class="pcard featured reveal reveal-d2">
+                <div class="pcard-badge">Most Popular</div>
+                <div class="pcard-top">
+                    <p class="pcard-type">Long-Term</p>
+                    <p class="pcard-rate">Negotiable<em>/month</em></p>
+                </div>
+                <ul>
+                    <li>Flexible lease terms</li>
+                    <li>All utilities included</li>
+                    <li>High-speed WiFi</li>
+                    <li>Fully furnished</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="tel:+260972437080" class="btn-light">Call / WhatsApp to Enquire</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities" id="amenities">
+    <div class="am-inner">
+        <div class="am-left reveal">
+            <span class="eyebrow">What's Included</span>
+            <h2 class="section-h">Everything's<br><em>Ready for You</em></h2>
+            <p>Walk in and feel at home. Every comfort has been taken care of from day one.</p>
+            <a href="tel:+260972437080" class="btn-solid" style="margin-top:2rem">Call / WhatsApp to Book</a>
+        </div>
+        <div class="am-list reveal reveal-d2">
+            <div class="am-row"><span class="am-ico">🛏</span><div><strong>Furnished Bedrooms</strong><p>Comfortable beds, wardrobes and bedside tables</p></div></div>
+            <div class="am-row"><span class="am-ico">🎬</span><div><strong>Netflix</strong><p>Stream your favourite shows from day one</p></div></div>
+            <div class="am-row"><span class="am-ico">🍳</span><div><strong>Equipped Kitchen</strong><p>Fridge, cooker, utensils and everything in between</p></div></div>
+            <div class="am-row"><span class="am-ico">📶</span><div><strong>High-Speed WiFi</strong><p>Stay connected whether for work or leisure</p></div></div>
+            <div class="am-row"><span class="am-ico">🔒</span><div><strong>Security</strong><p>Guard-secured building</p></div></div>
+            <div class="am-row"><span class="am-ico">🛋</span><div><strong>Living Room Area</strong><p>Spacious, light-filled lounge to relax and unwind</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="contact-inner">
+        <div class="contact-left reveal" style="flex:1;max-width:600px;margin:0 auto;">
+            <span class="eyebrow light">Get in Touch</span>
+            <h2 class="section-h light">To Book,<br><em>Call or WhatsApp</em></h2>
+            <p>Reach us directly by phone or WhatsApp and we'll confirm your reservation within 24 hours.</p>
+            <div class="contact-details">
+                <a href="tel:+260972437080" class="cd">
+                    <span>📞</span><div><strong>Phone / WhatsApp</strong><p>+260 972 437 080</p><p>+260 974 916 947</p></div>
+                </a>
+                <div class="cd">
+                    <span>📍</span><div><strong>Location</strong><p>Meanwood Ibex, Lusaka</p></div>
+                </div>
+                <div class="cd">
+                    <span>🕐</span><div><strong>Check-in / out</strong><p>In: 10:00 AM · Out: 11:00 AM</p></div>
+                </div>
+            </div>
+            <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;">
+                <a href="tel:+260972437080" class="btn-solid" style="flex:1;text-align:center;min-width:160px;">Call / WhatsApp Now</a>
+                <a href="https://wa.me/260972437080" target="_blank" class="btn-light" style="flex:1;text-align:center;min-width:160px;">WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="foot-inner">
+        <div class="foot-brand">
+            <span class="foot-logo">3Lus_Apartments</span>
+            <p>Meanwood Ibex · Lusaka, Zambia</p>
+        </div>
+        <div class="foot-links">
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#amenities">Amenities</a>
+        </div>
+        <div class="foot-contact">
+            <a href="tel:+260972437080">+260 972 437 080</a>
+            <a href="tel:+260974916947">+260 974 916 947</a>
+        </div>
+    </div>
+    <p class="foot-copy">&copy; 2026 3Lus_Apartments_Apartments · All rights reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
