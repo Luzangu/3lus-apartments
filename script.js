@@ -134,13 +134,3 @@ if (document.getElementById('bookForm')) document.getElementById('bookForm').add
     btn.disabled = false; btn.classList.remove('loading');
 });
 
-/* ── FORCE PLAY VIDEOS ON MOBILE ── */
-document.querySelectorAll('video').forEach(v => {
-    v.play().catch(() => {});
-});
-const videoObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) e.target.play().catch(() => {});
-    });
-}, { threshold: 0.2 });
-document.querySelectorAll('video').forEach(v => videoObserver.observe(v));
