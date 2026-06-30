@@ -54,7 +54,7 @@ const lazyVideoObserver = new IntersectionObserver(entries => {
                 source.src = source.dataset.src;
                 source.removeAttribute('data-src');
                 e.target.load();
-                e.target.play().catch(() => {});
+                e.target.addEventListener('canplay', () => e.target.play().catch(() => {}), { once: true });
             }
             lazyVideoObserver.unobserve(e.target);
         }
