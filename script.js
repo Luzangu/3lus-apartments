@@ -60,7 +60,11 @@ const lazyVideoObserver = new IntersectionObserver(entries => {
         }
     });
 }, { threshold: 0.1 });
-document.querySelectorAll('.gcard video').forEach(v => lazyVideoObserver.observe(v));
+document.querySelectorAll('video').forEach(v => {
+    if (!v.closest('.hero-slides') && v.querySelector('source[data-src]')) {
+        lazyVideoObserver.observe(v);
+    }
+});
 
 /* ── SCROLL REVEAL ── */
 const ro = new IntersectionObserver(entries => {
