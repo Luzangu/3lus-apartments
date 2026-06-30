@@ -21,16 +21,46 @@ function closeMob() {
 const slides = document.querySelectorAll('.hs');
 const sdots  = document.querySelectorAll('.sdot');
 let cur = 0, timer;
+
+function loadSlideVideo(slide) {
+    const source = slide.querySelector('source[data-src]');
+    if (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute('data-src');
+        slide.querySelector('video').load();
+    }
+}
+
 function goSlide(n) {
+    slides[cur].querySelector('video').pause();
     slides[cur].classList.remove('active');
     sdots[cur].classList.remove('active');
     cur = n;
+    loadSlideVideo(slides[cur]);
     slides[cur].classList.add('active');
     sdots[cur].classList.add('active');
+    slides[cur].querySelector('video').play().catch(() => {});
     clearInterval(timer);
     timer = setInterval(() => goSlide((cur + 1) % slides.length), 5500);
 }
 timer = setInterval(() => goSlide((cur + 1) % slides.length), 5500);
+
+/* ── LAZY LOAD GALLERY VIDEOS ── */
+const lazyVideoObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            const source = e.target.querySelector('source[data-src]');
+            if (source) {
+                source.src = source.dataset.src;
+                source.removeAttribute('data-src');
+                e.target.load();
+                e.target.play().catch(() => {});
+            }
+            lazyVideoObserver.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.gcard video').forEach(v => lazyVideoObserver.observe(v));
 
 /* ── SCROLL REVEAL ── */
 const ro = new IntersectionObserver(entries => {
